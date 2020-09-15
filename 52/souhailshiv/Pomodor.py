@@ -1,21 +1,15 @@
-import os
 from time import *
 import beepy
 import keyboard
-from tkinter import *
-from tkinter import ttk
-
-root = Tk()
-
-w = Label(root, text="this is pomodor ", fg="red",
-          bg="black", font=("Helevetica", 20))
-w.pack()
 
 
-def pomodor(min):
-    print("work time")
+print("this is pomodor \n note:if you want to stop it keep pressing the key 's'")
+
+
+def timecounting(min):
+    global sec
     sec = 0
-    while min != 0 or sec != 0:
+    while True:
         print("minuts: ", min, " ", "seconds: ", sec)
         sleep(1)
         if sec == 0:
@@ -29,37 +23,27 @@ def pomodor(min):
         else:
             sec = sec-1
 
+
+def pomodor(min):
+    print("work time")
+
+    timecounting(min)
+
     beepy.beep(sound=5)
     Break(xy)
 
 
 def Break(minut):
     print("break time")
-    second = 0
-    while True:
-        print("minuts: ", minut, " ", "seconds: ", second)
-        sleep(1)
-        if second == 0:
-            if minut != 0:
-                minut = minut-1
-                second = 59
-            else:
-                break
 
-        elif keyboard.is_pressed("s"):
-            exit()
-        else:
-            second = second-1
+    timecounting(minut)
 
     beepy.beep(sound=5)
     pomodor(xx)
 
 
-# xx = int(input("Enter how much minuts you want: "))
-# xy = int(input("Enter how much break do you want: "))
+xx = int(input("Enter how much minuts you want: "))
+xy = int(input("Enter how much break do you want: "))
 
 
-# pomodor(xx)
-
-
-root.mainloop()
+pomodor(xx)
