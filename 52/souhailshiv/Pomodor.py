@@ -1,15 +1,9 @@
-import os
 from time import *
 import beepy
 import keyboard
-from tkinter import *
-from tkinter import ttk
 
-root = Tk()
 
-w = Label(root, text="this is pomodor ", fg="red",
-          bg="black", font=("Helevetica", 20))
-w.pack()
+print("this is pomodor \n note:if you want to stop it keep pressing the key 's'")
 
 
 def pomodor(min):
@@ -55,11 +49,8 @@ def Break(minut):
     pomodor(xx)
 
 
-# xx = int(input("Enter how much minuts you want: "))
-# xy = int(input("Enter how much break do you want: "))
+xx = int(input("Enter how much minuts you want: "))
+xy = int(input("Enter how much break do you want: "))
 
 
-# pomodor(xx)
-
-
-root.mainloop()
+pomodor(xx)
